@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>JS in html</title>
+    <script>
+        // You can use the script element to start writing javascript
+
+        //Run this after the site is readily loaded
+        window.onload = () => {
+            alert('With alerts you create little popups');
+            // Get the p element with the id text
+            const text = document.getElementById("text");
+            // With setTimeout you execute a given function after a specified amount of milliseconds
+            setTimeout(
+                () => text.innerText = 'innerText is the text of an element (without html)',
+                2000
+            );
+
+            // Add an 'a' letter to the end of the text after every 5 second with setInterval
+            setInterval(
+                () => text.innerText += 'a',
+                5000
+            );
+        };
+    </script>
+</head>
+<body>
+    <p id="text">This has the id of "text"</p>
+</body>
+</html>

@@ -1,0 +1,8 @@
+Nodejs is a JavaScript execution engine which can be used to execute code on the host machine.
+It is based on the Chrome implementation of JavaScript (V8). 
+Because of node it became possible to create web apps/websites all in JavaScript which makes it
+a lot more powerful as a tool to know. In my opinion JavaScript is the most important language
+to know alongside C and using it will get you productive very fast.
+
+Nodejs can be installed at (https://nodejs.org/en/) use your operating systems instructions.
+For debian based operating systems i recommend installing from apt.

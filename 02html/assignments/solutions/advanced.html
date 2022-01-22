@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello! Goodbye!</title>
+    <script>
+        window.onload = () => {
+            setTimeout(
+                () => document.getElementById('greeting').innerText = 'Goodbye',
+                5000
+            )
+        };
+    </script>
+</head>
+<body>
+    <div>
+        <p id="greeting">Hello</p> World
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Forms are created using the HTML form tag-->
+    <!--
+        With post we say that we want to post data.
+        The action says to which resource the data should be posted.
+        The enctype says in which format the data will be send. 
+        The urlencoded option is very simple and easy to use.
+    -->
+    <form method="post" enctype="application/x-www-form-urlencoded" action="/data">
+        <!--What data an input tag yields is defined with the type attribute-->
+        <!--With the text attribute you can enter any text-->
+        <!--Use required to make a field required-->
+        <!--The name is required-->
+        <input type="text" name="user-name" required>
+        <!--With the number attribute you can enter any text-->
+        <input type="number" name="user-age"> <br>
+        <!--With the checkbox attribute you can get one boolean through a checkbox-->
+        <input type="checkbox" name="user-consents">
+        <!--With the date element a user can pick a date through a calendar-->
+        <input type="date" name="user-birthday">
+        <!--We can use the placeholder attribute to set a placeholder-->
+        <!--With the email tag the email is directly validated to a syntacitcally correct mail-->
+        <input type="email" name="user-email" placeholder="max@musterman.de">
+        <!--
+            Labels can be used to label an input. Set the for attribute to tell the browser to 
+            which element this belongs
+        -->
+        <label for="user-password">Your password: </label>
+        <!--Using password is the same as text but the input is hidden-->
+        <input type="password" name="user-password">
+        <!--Use submit to create a button which submits the form, use value to set its label-->
+        <input type="submit" value="Submit">
+        <!--
+            There are many more input types a complete documentation can be found at: 
+            https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input 
+        -->
+    </form>
+</body>
+
+</html>

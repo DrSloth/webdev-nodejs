@@ -1,0 +1,2 @@
+Write an html page containing a div element which contains a p element containing the text "Hello" 
+which changes to "Goodbye" after 5 seconds. After that the div should contain the text "World"
