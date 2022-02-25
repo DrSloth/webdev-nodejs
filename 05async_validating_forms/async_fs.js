@@ -11,3 +11,5 @@ const main = async () => {
         console.log(`An error occured: ${e}`)
     }
 }
+
+main();

@@ -1,0 +1,29 @@
+digraph G {
+  start -> clone;
+  clone -> t1;
+  t1 -> t2;
+  t2 -> t3;
+  clone -> t4;
+  t3 -> t7[dir=forward,xlabel="This time is still wasted       "];
+  t4 -> t5;
+  t5 -> t6;
+  t6 -> t7[label="This time is still wasted"];
+  t7 -> recombine;
+  recombine -> t8;
+  t8 -> t9;
+  t9 -> end;
+  
+  start [shape=Mdiamond];
+  clone[label="Create a clone of yourself"]
+  t1[label="Take bread"]
+  t2[label="Put bread in toaster"]
+  t3[label="Wait until toast is finished"]
+  t4[label="Get frying pan"]
+  t5[label="Crack eggs"]
+  t6[label="Wait until eggs are finished"]
+  t7[label="Wait until both are finished"]
+  recombine[label="Recombine the clones"];
+  t8[label="Put eggs on toast"]
+  t9[label="Eat the toast"]
+  end [shape=Msquare];
+}

@@ -1,0 +1,40 @@
+digraph G {
+  start -> t1;
+    
+  splines=false;
+  
+  t1 -> t2;
+  t2 -> t4;
+  t4 -> t5;
+  t5 -> poll;
+  poll -> isfinished;
+  
+  isfinished:e -> isfinished2:e[arrowhead=none];
+  isfinished2:e -> poll2:w[arrowhead=none, label="No"];
+  {
+    rank = same;
+    poll -> poll2[arrowhead=none;arrowtail="normal";dir=back];
+  }
+  isfinished -> t7[label="Yes"];
+  t7 -> t8;
+  t8 -> end;
+  
+  start [shape=Mdiamond];
+  t1[label="Take bread"];
+  t2[label="Put bread in toaster"];
+  t4[label="Get frying pan"];
+  t5[label="Crack eggs"];
+  isfinished[label="Eggs and toast finished?", shape=diamond]
+  t7[label="Put eggs on toast"];
+  t8[label="Eat the toast"];
+  end [shape=Msquare];
+  
+  {
+    rank=same;
+    isfinished2; isfinished; 
+  }
+  isfinished2[label="", color=white]
+  
+  poll2[label=" ", color=white];
+  poll[label="Poll wether the eggs and the toast are finished \n and do something else"];
+}

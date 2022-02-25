@@ -1,0 +1,22 @@
+digraph G {
+  start -> t1;
+  t1 -> t2;
+  t2 -> t3;
+  t3 -> t4[label="This time is wasted"];
+  t4 -> t5;
+  t5 -> t6;
+  t6 -> t7[label="This time is wasted"];
+  t7 -> t8;
+  t8 -> end;
+  
+  start [shape=Mdiamond];
+  t1[label="Take bread"]
+  t2[label="Put bread in toaster"]
+  t3[label="Wait until toast is finished"]
+  t4[label="Get frying pan"]
+  t5[label="Crack eggs"]
+  t6[label="Wait until eggs are finished"]
+  t7[label="Put eggs on toast"]
+  t8[label="Eat the toast"]
+  end [shape=Msquare];
+}

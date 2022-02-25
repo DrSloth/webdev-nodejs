@@ -1,8 +1,9 @@
 // Some things cant be done using async functions. For that purpose we have to use Promises
 const sleep1s = new Promise((resolve, _reject) => {
     setTimeout(() => {
-        resolve()
-    }, 1000);
+        // It is not possible to "delay" a return use the resolve function for that
+        resolve();
+    }, 3000);
 });
 
 const main = async () => {

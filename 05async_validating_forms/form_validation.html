@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 
+    Forms should be validated on the frontend (user friendliness) and on the server (safety).
+    We already shortly talked about the server side validation. This is the simplest approach
+    to validate a normal html form.
+
+    Execute for_await.js to look at this in localhost
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <script>
+        // We want to check that the percent-finished value is between 0 and 100
+        function formsubmit(form) {
+            const percent_input = form.elements["percent-finished"];
+            // Parse the input value as int
+            const percent = parseInt(percent_input.value);
+            // The form is valid if the percent is a number and between 0 and 100
+            const valid = !isNaN(percent) && percent >= 0 && percent <= 100;
+            if(!valid) {
+                // Use alert to tell the user to correct his input
+                alert("The percent have to be between 0 and 100 (inclusive)");
+            }
+            return valid;
+        };
+    </script>
+</head>
+<body>
+    <!-- 
+        This executes the onsubmit function, this can also be set in JavaScript by first getting the form 
+        and then setting the onsubmit attribute
+    -->
+    <form action="/" method="POST" onsubmit="return formsubmit(this)">
+        <label for="percent-finished">percent:</label>
+        <input type="number" name="percent-finished" id="percent-finished">%
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
