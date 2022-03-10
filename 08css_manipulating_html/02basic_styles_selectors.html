@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored Text</title>
+    <!-- This is an HTML style element which can be used to write CSS -->
+    <style>
+        /* Comments in CSS can be made using this syntax */
+
+        /* 
+            CSS is build out of a set of individual rules.
+            Every css rule starts with a selector followed by a set of css attributes enclosed in curly braces.
+            Every attribute has a certain set of values that can be applied to it.
+        */
+
+        /* 
+            This is called a type selector.
+            It applies a style to all elements of a kind.
+        */
+        p {
+            /* Color is used to change the color of text. There are multiple ways to specify colors */
+            color: red;
+        }
+
+        /* 
+            This is a class selector because of the dot. Classes do not have to be unique.
+            Multiple elements can have the same class and elements can have multiple classes
+        */
+        .my-class {
+            /* Specify color as rgb. Mixing red, green and blue on a scale from 0 to 255 each */
+            color: rgb(0, 0, 255);
+        }
+
+        /* This is an id selector because of the #. It applies a style to the element with the given id */
+        #my-id {
+            /* Specify a color as hexadecimal number. Two digits are used for red Two for green and two for blue*/
+            color: #00FF00;
+        }
+
+        #my-overriden-id {
+            color: white;
+        }
+    </style>
+    <!--
+        A css stylesheet can also be loaded as an external ressource with a link element 
+        rel="stylesheet" tells the browser that the element loaded from the href is a stylesheet 
+        <link rel="stylesheet" href="style.css"> 
+    -->
+</head>
+<body>
+    <p>I am red</p>
+    <!-- Set a class for the element. Class properties override type ones -->
+    <p class="my-class">I am blue</p>
+
+    <!-- Set an id for the element. Ids have to be unique. Ids override class and type properties -->
+    <p class="my-class" id="my-id">I am green</p>
+
+    <!-- Elements can directly specify styles. These element styles override all other styles -->
+    <p id="my-overriden-id" class="my-class" style="color: rebeccapurple;">I am rebeccapurple</p>
+</body>
+</html>

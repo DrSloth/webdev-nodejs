@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It Hides</title>
+    <script>
+        window.onload = () => {
+            const shy_text = document.getElementById("shy-text");
+            shy_text.onclick = () => {
+                shy_text.style.display = 'none';
+            };
+        };
+    </script>
+    <style>
+        #shy-text:hover {
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id="shy-text">I will hide if you click me</p>
+</body>
+</html>
