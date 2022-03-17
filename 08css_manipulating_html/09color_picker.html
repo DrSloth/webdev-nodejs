@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>They disappear</title>
+    <style>
+        .light {
+            --text-color: black;
+            --bg-color: white;
+        }
+
+        .dark {
+            --text-color: white;
+            --bg-color: #181818;
+        }
+        
+        p {
+            color: var(--text-color);
+            /* Transitions are small animations which are played when the given attribute changes */
+            transition: color 1000ms ease-in-out;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            transition: background 500ms ease-in-out;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const btn = document.getElementById("change-color-theme-button");
+            btn.onclick = () => {
+                if(document.body.classList.contains('dark')) {
+                    document.body.classList.replace('dark', 'light')
+                } else {
+                    document.body.classList.replace('light', 'dark')
+                }
+            };
+        };
+    </script>
+</head>
+<body class="light">
+    <p>I am a stylized text</p>
+    <p>Color themes can be done like this</p>
+    <button id="change-color-theme-button" type="button">Change color theme</button>
+</body>
+</html>

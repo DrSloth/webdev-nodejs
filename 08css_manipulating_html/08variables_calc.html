@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>They disappear</title>
+    <style>
+        :root {
+            --element-width: 10vw;
+        }
+        
+        p {
+            position: absolute;
+            top: 1vh;
+            color: red;
+            background-color: rebeccapurple;
+            width: var(--element-width);
+            margin-left: 1vw;
+        }
+        
+        #first {
+            left: 0;
+        }
+
+        #second {
+            left: calc(var(--element-width) + 1vw);
+        }
+
+        #third {
+            left: calc(var(--element-width) * 2 + 2vw);
+        }
+    </style>
+</head>
+<body>
+    <p id="first">First</p>
+    <p id="second">Second</p>
+    <p id="third">Third</p>
+</body>
+</html>

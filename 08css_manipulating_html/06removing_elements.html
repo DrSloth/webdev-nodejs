@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>They disappear</title>
+    <script>
+        window.onload = () => {
+            // Get elements by classname
+            const removables = document.getElementsByClassName("removable");
+            for(const e of removables) {
+                e.onclick = () => {
+                    e.remove()
+                };
+            }
+        };
+    </script>
+    <style>
+        .removable:hover {
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="removable">I disappear if you click me</div>
+    <p class="removable">I also disappear if you click me</p>
+    <button class="removable">Everything with the removable class disappears if you click it</button>
+</body>
+</html>

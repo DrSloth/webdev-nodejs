@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        .block {
+            --element-width: 10vw;
+            animation: left-to-right 2000ms linear 2000ms 2 forwards alternate;
+            width: var(--element-width);
+            height: 10vh;
+            background-color: red;
+            position: absolute;
+            margin: 0;
+        }
+
+        @keyframes left-to-right {
+            from {
+                left: 0vw;
+            }
+            50% {
+                left: 60vw;
+            }
+            to {
+                left: calc(100vw - var(--element-width));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="block"></div>
+</body>
+</html>

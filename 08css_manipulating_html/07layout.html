@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        /*
+            Viewport is oriented on device sizes 10vw are 10 percent of device width,
+            10vh 10 percent of device heigh. This does not support zooming on most non mobile devices
+        */
+        p {
+            /* Absolute position means a relative position to the parent */
+            position: absolute;
+            background-color: red;
+        }
+
+        #viewport {
+            /* Distance from left border of element to left border of page */
+            left: 10vw;
+            /* Distance from top border of element to top border of page */
+            top: 10vh;
+        }
+
+        #percent {
+            /* Percentages are similiar to viewport sizes but relative to the parent */
+            right: 0%;
+            top: 0%;
+            /* The margin define a region around the border of an element where nothing should be placed */
+            margin: 0;
+            /*
+                Padding is an area inside an elements border where nothing may be placed.
+                Pixels are an absolue measure defined by a devices resolution
+            */
+            padding: 20px 20px 20px 20px;
+            border: 1px solid black;
+        }
+    </style>
+    </script>
+</head>
+<body>
+    <p id="viewport">I am positioned with viewport</p>
+    <p id="percent">I am positioned with percentage</p>
+</body>
+</html>

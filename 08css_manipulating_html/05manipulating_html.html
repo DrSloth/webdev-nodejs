@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It Creates</title>
+    <script>
+        window.onload = () => {
+            const textContainer = document.getElementById("text-container");
+            const textBtn = document.getElementById("text-btn");
+            let n = 0;
+            textBtn.onclick = () => {
+                // Create a new p element
+                const newText = document.createElement("p");
+                newText.innerText = `I AM TEXT ${n}`;
+                n += 1;
+                //textContainer.append(newText);
+                textContainer.insertBefore(newText, textContainer.children[0])
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="text-btn" type="button">I create a text if you click me</button>
+    <div id="text-container">Created texts:</div>
+</body>
+</html>
