@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <script>
+        const addUser = async (user) => {
+            // log the new user, in production it is a very bad idea to log passwords
+            console.log(`The new user is ${JSON.stringify(user)}`); 
+
+            // The fetch function optionally takes an options object as second arg you can pass
+            // a body and specify the method for the request. The default is GET with an empty body
+            const resp = await fetch(
+                '/users', {
+                    // set the method
+                    method: "POST",
+                    // set the request headers
+                    headers: {
+                        // The Content-Type header is very important to set for the 
+                        // receiving side (our server) to know wha it has to parse
+                        'Content-Type': 'application/json'
+                    },
+                    // set the request body
+                    body: JSON.stringify(user)
+                },
+            );
+
+            // parse the response as json
+            const users = await resp.json();
+
+            // log the response object
+            console.log(users);
+
+            alert(`There are now ${users.length} users`);
+        };
+
+        const formSubmit = async (form) => {
+            // Store the input user as object
+            const user = {
+                name: form.elements["user-name"].value,
+                age: parseInt(form.elements["user-age"].value),
+                password: form.elements["user-password"].value,
+            }
+
+            // Validate correctness of input
+            const input_valid = user.name.length > 0 && user.age > 0 && user.password.length > 0;
+
+            if(!input_valid) {
+                alert("Invalid user");
+                return false;
+            }
+
+            await addUser(user);
+        };
+    </script>
+</head>
+<body>
+    <form action="/users" method="POST" id="user-form" onsubmit="formSubmit(this); return false;">
+        <label for="user-name">Name: </label>
+        <input type="text" name="user-name" id="user-name"> <br> <br>
+        <label for="user-age">Age: </label> 
+        <input type="number" name="user-age" id="user-age"> <br> <br>
+        <label for="user-password">Password: </label>
+        <input type="password" name="user-password" id="user-password"> <br> <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
